@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import AddItem from "./components/AddItem/AddItem";
 
 function App() {
+  const [courseItems, setDoToListItems] = useState([]);
+
+  //handler to receive Item from NewItem
+  const addNewItemHandler = (newItem) => {
+    setDoToListItems((OldDoToListItems) => {
+      return OldDoToListItems.concat(newItem);
+    });
+  };
+
+  const deleteItemHandler = (deleteItem) => {
+    setDoToListItems((NewDoToListItems) => {
+      return NewDoToListItems.filter((_, i) => i !== courseItems.indexOf(deleteItem, 0));
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <h2>To Do List:</h2>
+        <AddItem onAddItem={addNewItemHandler} />
+        <ol>{
+          courseItems.map((item) => {
+            return (
+              <div className="item-list" key={item.id}>
+                <li>{item.text}</li>
+                <button className="button-del" onClick={() => deleteItemHandler(item)}>Delete Item</button>
+              </div>
+            )
+          })
+        }
+        </ol>
+      </main>
+      <Footer />
     </div>
   );
 }

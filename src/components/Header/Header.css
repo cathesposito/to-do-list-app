@@ -1,0 +1,13 @@
+.new-item {
+    margin: 2rem;
+    text-align: center;
+}
+
+button {
+    color: #001F3F;
+    font-size: 24px;
+    background-color: #F3D0D7;
+    border: none;
+    padding: 3px 12px;
+    border-radius: 3px;
+}

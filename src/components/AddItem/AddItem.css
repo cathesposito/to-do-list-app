@@ -1,0 +1,14 @@
+.new-item {
+    margin: 2rem;
+    text-align: center;
+}
+
+.button-add {
+    color: #001F3F;
+    background-color: #F3D0D7;
+    border: none;
+    padding: 3px 12px;
+    border-radius: 3px;
+    font-size: 20px;
+    margin-top: 12px;
+}

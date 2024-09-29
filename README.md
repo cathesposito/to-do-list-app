@@ -2,9 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## From clone
+Look at the files and folder of the project
+Delete node_modules folder and package-lock.json file if exists
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+## `npm install`
+npm install # this will create node_modules folder and package-lock.json
 
 ### `npm start`
 
